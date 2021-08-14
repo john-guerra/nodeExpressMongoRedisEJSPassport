@@ -1,5 +1,5 @@
 # nodeExpressSqliteEJS
-An Example Application Using Node + Expres + SQlite + EJS implementing a simple reference manager
+A basic example developed in class demonstrating how to combine Node + Express + Passport + EJS + Mongo + Redis 
 
 
 ## Using it
@@ -21,6 +21,3 @@ npm start
 4) Point your browser to http://locahost:3000
 
 
-## Architecture
-
-<img src="./public/images/architecture.png" alt="Architecture of the Aplication"/>
