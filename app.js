@@ -30,6 +30,14 @@ app.use(
     saveUninitialized: false,
   })
 );
+// General messages
+app.use(function(req, res, next) {
+  var msgs = req.session.messages || [];
+  res.locals.messages = msgs;
+  res.locals.hasMessages = !! msgs.length;
+  req.session.messages = [];
+  next();
+});
 
 app.use(passport.initialize());
 app.use(passport.authenticate("session"));
@@ -46,7 +54,6 @@ app.use(function (req, res, next) {
 // error handler
 app.use(function (err, req, res, next) {
   // set locals, only providing error in development
-  // res.locals.hasMessage = !! err.message ;
   res.locals.message = err.message;
 
   res.locals.error = req.app.get("env") === "development" ? err : {};

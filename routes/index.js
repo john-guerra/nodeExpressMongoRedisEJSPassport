@@ -18,6 +18,7 @@ router.get("/references", async (req, res, next) => {
   const page = +req.query.page || 1;
   const pageSize = +req.query.pageSize || 24;
   const msg = req.query.msg || null;
+  if (msg) req.session.messages = [msg];
   try {
     let total = await myDb.getReferencesCount(query);
     let references = await myDb.getReferences(query, page, pageSize);
@@ -39,6 +40,7 @@ router.get("/references/:reference_id/edit", async (req, res, next) => {
   const reference_id = req.params.reference_id;
 
   const msg = req.query.msg || null;
+  if (msg) req.session.messages = [msg];
   try {
 
     let ref = await myDb.getReferenceByID(reference_id);

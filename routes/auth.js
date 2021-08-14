@@ -6,6 +6,7 @@ var router = express.Router();
 /* GET users listing. */
 router.get("/login", function (req, res, next) {
   const msg = req.query.msg || null;
+  if (msg) req.session.messages = [msg];
   res.render("./pages/login", { msg, user: req.user });
 });
 

@@ -7,9 +7,7 @@
     <div class="container">
       <h1>Login</h1>
 
-      <% if (msg) { %>
-      <div class="alert alert-primary"><%= msg %></div>
-      <% } %>
+      <%- include("../templates/messages.ejs") %>
 
       <form action="/login/password" method="POST">
         <div class="mb-3">

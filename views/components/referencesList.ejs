@@ -8,7 +8,7 @@
         <div class="card-text">
           <div><%= ref.published_on %></div>
           <div><%= ref.citations %> citations</div>
-          <div>Authors: <%= ref.authors.join(", ") %></div>
+          <div>Authors: <%= ref.authors && ref.authors.join ?ref.authors.join(", "): ref.authors %></div>
           <div>
             <a class="btn btn-outline-primary" href="<%= '/references/' + ref._id + '/edit' %>">Edit</a>
             <a class="btn btn-outline-danger" href="<%= '/references/' + ref._id + '/delete' %>">Delete</a>
