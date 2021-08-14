@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <%- include("../templates/head.ejs") %>
+  <body>
+
+    <%- include("../templates/navBar.ejs", {user}) %>
+
+    <div class="container">
+      <h1>Edit Reference</h1>
+
+
+      <% if (msg) { %>
+        <div class="alert alert-primary">
+          <%= msg %>
+        </div>
+      <% } %>
+
+      <%- include("../components/formEditReference.ejs", { ref }) %>
+
+
+
+    <%-  include("../components/venuesList.ejs", { ref })  %>
+
+
+
+
+
+    </div>
+
+    <%- include("../templates/footer.ejs") %>
+  </body>
+</html>
