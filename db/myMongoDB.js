@@ -1,8 +1,8 @@
 const { MongoClient, ObjectId } = require("mongodb");
 
 const uri = process.env.MONGO_URL || "mongodb://localhost:27017";
-const DB_NAME = "ReferenceManager";
-const COL_NAME = "Reference";
+const DB_NAME = "referenceManager";
+const COL_NAME = "references";
 
 async function getReferences(query, page, pageSize) {
   console.log("getReferences", query);
